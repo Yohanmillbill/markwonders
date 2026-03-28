@@ -1454,21 +1454,137 @@
     transform: translateY(0);
   }
 
+  /* ── HAMBURGER MENU ── */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+    z-index: 200;
+  }
+
+  .nav-hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  .nav-hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.active span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(26, 27, 26, 0.97);
+    backdrop-filter: blur(20px);
+    z-index: 150;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+  }
+
+  .mobile-menu-overlay.open { display: flex; }
+
+  .mobile-menu-overlay a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+
+  .mobile-menu-overlay a:hover { opacity: 1; }
+
+  .mobile-menu-overlay .nav-cta {
+    margin-top: 8px;
+    padding: 14px 32px;
+    font-size: 16px !important;
+  }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     nav { padding: 16px 24px; }
     .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
     .about-grid,
     .services-grid,
     .contact-inner { grid-template-columns: 1fr; gap: 32px; }
+    .cases-grid { grid-template-columns: 1fr; gap: 16px; }
     .creators-grid { grid-template-columns: 1fr 1fr; }
     section { padding: 72px 24px; }
+    .services-section,
+    .cases-section,
+    .contact-section { padding: 72px 24px; }
     footer { flex-direction: column; text-align: center; padding: 32px 24px; }
+    .footer-links { justify-content: center; flex-wrap: wrap; }
+    .contact-inner { gap: 40px; }
+    .service-card { padding: 28px; }
+    .case-header { padding: 24px 24px 20px; }
+    .case-tags { padding: 0 24px 20px; }
+    .case-stat { padding: 16px 12px; }
+    .case-stat-val { font-size: 18px; }
+    .case-card-soon { padding: 40px 24px; }
+    .contact-form-box { padding: 28px; }
   }
 
   @media (max-width: 600px) {
     .creators-grid { grid-template-columns: 1fr; }
     .hero-stats { gap: 28px; }
+    .form-row { grid-template-columns: 1fr !important; }
+    .hero { padding: 100px 20px 60px; min-height: auto; min-height: 100svh; }
+    .hero-title { font-size: clamp(28px, 7vw, 48px); }
+    .hero-sub { font-size: 14px; }
+    .hero-btns { flex-direction: column; align-items: center; }
+    .hero-btns a { width: 100%; max-width: 260px; text-align: center; justify-content: center; }
+    .hero-stats { margin-bottom: 40px; }
+    section { padding: 56px 16px; }
+    .services-section,
+    .cases-section,
+    .contact-section { padding: 56px 16px; }
+    .section-title { font-size: clamp(24px, 6vw, 36px); }
+    .service-card { padding: 24px; }
+    .service-title { font-size: 17px; }
+    .case-header { padding: 20px 20px 16px; }
+    .case-tags { padding: 0 20px 16px; }
+    .case-stat { padding: 14px 8px; }
+    .case-stat-val { font-size: 16px; }
+    .case-stat-key { font-size: 10px; }
+    .case-title { font-size: 18px; }
+    .case-card-soon { padding: 32px 20px; }
+    .creator-card { padding: 22px; }
+    .contact-form-box { padding: 22px; }
+    .contact-inner { gap: 28px; }
+    footer { padding: 28px 16px; gap: 16px; }
+    .footer-links { gap: 16px; }
+    nav { padding: 14px 16px; }
+    .nav-wordmark { font-size: 14px; }
+  }
+
+  @media (max-width: 420px) {
+    .af-pipeline { flex-wrap: wrap; gap: 4px; }
+    .af-conn { width: 16px; }
+    .af-step-icon { width: 44px; height: 44px; border-radius: 12px; }
+    .af-hub { width: 60px; height: 60px; }
+    .af-hub img { width: 36px; }
+    .af-step-name { font-size: 9px; }
+    .hero-stat-num { font-size: 22px; }
+    .hero-stat-label { font-size: 11px; }
+    .case-stats { grid-template-columns: 1fr; }
+    .case-stat { border-right: none; border-bottom: 1px solid var(--border); }
+    .case-stat:last-child { border-bottom: none; }
   }
 </style>
 </head>
@@ -1487,7 +1603,19 @@
     <li><a href="#creators">Creators</a></li>
     <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
+  <button class="nav-hamburger" onclick="toggleMobileMenu()" aria-label="메뉴 열기">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="mobile-menu-overlay" id="mobileMenu">
+  <a href="#about" onclick="closeMobileMenu()">About</a>
+  <a href="#services" onclick="closeMobileMenu()">Services</a>
+  <a href="#cases" onclick="closeMobileMenu()">Our Brands</a>
+  <a href="#creators" onclick="closeMobileMenu()">Creators</a>
+  <a href="#contact" class="nav-cta" onclick="closeMobileMenu()">Contact</a>
+</div>
 
 <!-- HERO -->
 <section class="hero" id="hero">
@@ -2011,7 +2139,7 @@
 
     <div class="contact-form-box reveal">
       <form onsubmit="handleSubmit(event)">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:0">
+        <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:0">
           <div class="form-group">
             <label>이름 / 브랜드명</label>
             <input type="text" placeholder="홍길동 / 브랜드명">
@@ -2075,6 +2203,22 @@
   document.body.classList.add('js-reveal');
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+
+  // Mobile menu
+  function toggleMobileMenu() {
+    var menu = document.getElementById('mobileMenu');
+    var btn = document.querySelector('.nav-hamburger');
+    menu.classList.toggle('open');
+    btn.classList.toggle('active');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+  }
+  function closeMobileMenu() {
+    var menu = document.getElementById('mobileMenu');
+    var btn = document.querySelector('.nav-hamburger');
+    menu.classList.remove('open');
+    btn.classList.remove('active');
+    document.body.style.overflow = '';
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
