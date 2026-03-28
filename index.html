@@ -1889,6 +1889,7 @@
     .creators-grid { grid-template-columns: 1fr 1fr; }
     .partners-grid { grid-template-columns: 1fr; gap: 16px; }
     .partners-section { padding: 72px 24px; }
+    .partner-card--featured div[style*="grid-template-columns"] { grid-template-columns: repeat(2, 1fr) !important; }
     .case-cta { margin: 0 24px 20px; }
     section { padding: 72px 24px; }
     .services-section,
@@ -2250,6 +2251,10 @@
         <h3 class="service-title">브랜드 마케팅</h3>
         <p class="service-sub">브랜드의 중국 진출 파트너</p>
         <p class="service-desc">성수·이태원·한남·홍대·연남 등 서울 주요 지역의 음식점, 바, 병원, 패션 브랜드 등 다양한 업종의 샤오홍슈 마케팅을 담당합니다. 중국인 팔로워가 많은 크리에이터를 통해 실질적인 방문과 매출로 연결합니다.</p>
+        <div style="margin:12px 0;padding:12px 16px;background:rgba(20,123,209,0.08);border:1px solid rgba(20,123,209,0.2);border-radius:10px;display:flex;align-items:flex-start;gap:10px;">
+          <span style="font-size:16px;line-height:1.4;">📋</span>
+          <p style="font-size:13px;color:rgba(255,255,255,0.85);line-height:1.6;margin:0;"><strong>체험단 700명+, 인플루언서 60명+ DB 보유</strong> — 자체 구축한 대규모 체험단·인플루언서 데이터베이스를 통해 브랜드에 최적화된 인원을 빠르게 매칭합니다.</p>
+        </div>
         <ul class="service-list">
           <li>샤오홍슈 채널 운영 및 콘텐츠 제작</li>
           <li>인플루언서 섭외 및 체험단 기획</li>
@@ -2358,20 +2363,49 @@
 <!-- PARTNER BRANDS -->
 <section class="partners-section">
   <div class="partners-inner">
-    <p class="section-label reveal">Partner Results</p>
-    <h2 class="section-title reveal">파트너 브랜드 성과</h2>
-    <p class="section-desc reveal">함께하고 있는 브랜드들의 실제 마케팅 성과입니다. 브랜드명은 비공개이며 업종과 핵심 지표만 공개합니다.</p>
+    <p class="section-label reveal">Results</p>
+    <h2 class="section-title reveal">마케팅 성과</h2>
+    <p class="section-desc reveal">자사 브랜드와 파트너 브랜드에서 달성한 실제 성과입니다. 파트너 브랜드명은 비공개이며 업종과 핵심 지표만 공개합니다.</p>
+
+    <!-- Zodiac Featured -->
+    <div class="partner-card partner-card--featured reveal" style="margin-top:48px;margin-bottom:20px;border-color:rgba(20,123,209,0.25);position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--blue);"></div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+        <span class="partner-industry" style="margin-bottom:0;">자사 브랜드 · 바 & 라운지</span>
+        <span style="font-size:11px;font-weight:500;color:var(--blue-light);opacity:0.7;">ZODIAC 성수</span>
+      </div>
+      <h3 class="partner-title" style="font-size:22px;margin-bottom:8px;">샤오홍슈 마케팅으로 외국인 고객 비율 55% 달성</h3>
+      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:24px;max-width:600px;">성수 소재 별자리 테마 바를 직접 운영하며 샤오홍슈 마케팅 노하우를 축적. 중국·일본 관광객 유입을 통해 외국인 비율을 지속적으로 끌어올리고 있습니다.</p>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;border-top:1px solid var(--border);padding-top:20px;">
+        <div style="text-align:center;">
+          <div style="font-size:24px;font-weight:500;color:var(--blue-light);letter-spacing:-0.02em;">55%</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:4px;">외국인 고객 비율</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:24px;font-weight:500;color:var(--blue-light);letter-spacing:-0.02em;">50万+</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:4px;">샤오홍슈 총 노출</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:24px;font-weight:500;color:var(--white);letter-spacing:-0.02em;">TOP 10%</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:4px;">샤오홍슈 SEO</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:24px;font-weight:500;color:var(--white);letter-spacing:-0.02em;">8개월+</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:4px;">지속 운영 중</div>
+        </div>
+      </div>
+    </div>
 
     <div class="partners-grid">
 
       <!-- Client A: F&B / 맛집 -->
       <div class="partner-card reveal">
         <span class="partner-industry">F&B · 맛집</span>
-        <p class="partner-label">성수 지역 맛집</p>
+        <p class="partner-label">성수 지역</p>
         <h3 class="partner-title">2개월 만에 검색 상위권 진입</h3>
         <div class="partner-metrics">
           <div class="partner-metric">
-            <span class="partner-metric-key">콘텐츠 제작</span>
+            <span class="partner-metric-key">콘텐츠</span>
             <span class="partner-metric-val">53건 (2개월)</span>
           </div>
           <div class="partner-metric">
@@ -2379,11 +2413,11 @@
             <span class="partner-metric-val highlight">13,000회</span>
           </div>
           <div class="partner-metric">
-            <span class="partner-metric-key">체험단 참여</span>
+            <span class="partner-metric-key">체험단</span>
             <span class="partner-metric-val">34팀</span>
           </div>
           <div class="partner-metric">
-            <span class="partner-metric-key">검색 순위</span>
+            <span class="partner-metric-key">맛집 검색 순위</span>
             <span class="partner-metric-val highlight">상위 15–25%</span>
           </div>
         </div>
@@ -2392,11 +2426,11 @@
       <!-- Client B: 바 / 나이트라이프 -->
       <div class="partner-card reveal">
         <span class="partner-industry">바 · 나이트라이프</span>
-        <p class="partner-label">서울 소재 바</p>
+        <p class="partner-label">서울 소재</p>
         <h3 class="partner-title">6개월 운영, 브랜드 검색 상위 95%</h3>
         <div class="partner-metrics">
           <div class="partner-metric">
-            <span class="partner-metric-key">총 콘텐츠</span>
+            <span class="partner-metric-key">콘텐츠</span>
             <span class="partner-metric-val">39건 (6개월)</span>
           </div>
           <div class="partner-metric">
@@ -2405,7 +2439,7 @@
           </div>
           <div class="partner-metric">
             <span class="partner-metric-key">브랜드명 검색</span>
-            <span class="partner-metric-val highlight">상위 95% 노출</span>
+            <span class="partner-metric-val highlight">상위 95%</span>
           </div>
           <div class="partner-metric">
             <span class="partner-metric-key">지역 키워드</span>
@@ -2414,27 +2448,27 @@
         </div>
       </div>
 
-      <!-- Client C: 후카바 / 라운지 -->
+      <!-- Client C: 피부과 / 의료미용 -->
       <div class="partner-card reveal">
-        <span class="partner-industry">후카바 · 라운지</span>
-        <p class="partner-label">경복궁 인근 라운지</p>
-        <h3 class="partner-title">동종 업종 대비 3배 반응률 달성</h3>
+        <span class="partner-industry">피부과 · 의료미용</span>
+        <p class="partner-label">성수 소재</p>
+        <h3 class="partner-title">동종 평균 대비 67% 높은 성과</h3>
         <div class="partner-metrics">
           <div class="partner-metric">
             <span class="partner-metric-key">체험단</span>
             <span class="partner-metric-val">13명</span>
           </div>
           <div class="partner-metric">
-            <span class="partner-metric-key">총 좋아요</span>
-            <span class="partner-metric-val highlight">3,249회</span>
+            <span class="partner-metric-key">총 좋아요+저장</span>
+            <span class="partner-metric-val highlight">1,236회</span>
           </div>
           <div class="partner-metric">
-            <span class="partner-metric-key">저장 수</span>
-            <span class="partner-metric-val highlight">400+회</span>
+            <span class="partner-metric-key">게시물당 반응</span>
+            <span class="partner-metric-val highlight">103회 (평균 80)</span>
           </div>
           <div class="partner-metric">
-            <span class="partner-metric-key">키워드 순위</span>
-            <span class="partner-metric-val">"경복궁 후카바" 상위</span>
+            <span class="partner-metric-key">참여도</span>
+            <span class="partner-metric-val">상위 83%</span>
           </div>
         </div>
       </div>
@@ -2625,19 +2659,58 @@
       </a>
     </div>
 
-    <div class="creator-card reveal" style="border-style: dashed; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 12px; min-height: 240px;">
+    <div class="creator-card reveal">
+      <div class="creator-avatar"><img src="data:image/jpeg;base64,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" alt="손채현"></div>
+      <div class="creator-name">손채현</div>
+      <div class="creator-handle">@ch_nns</div>
+      <div class="creator-tags">
+        <span class="creator-tag">일상</span>
+        <span class="creator-tag">패션</span>
+        <span class="creator-tag">메이크업</span>
+        <span class="creator-tag">K-트렌드</span>
+      </div>
+      <div class="creator-divider"></div>
+      <div class="creator-metrics">
+        <div class="creator-metric">
+          <div class="creator-metric-val">20대 여성</div>
+          <div class="creator-metric-key">타겟 페르소나</div>
+        </div>
+        <div class="creator-metric">
+          <div class="creator-metric-val">리얼 일상</div>
+          <div class="creator-metric-key">콘텐츠 톤</div>
+        </div>
+        <div class="creator-metric">
+          <div class="creator-metric-val">캠퍼스 라이프</div>
+          <div class="creator-metric-key">서브 콘텐츠</div>
+        </div>
+        <div class="creator-metric">
+          <div class="creator-metric-val">NEW</div>
+          <div class="creator-metric-key">2025 합류</div>
+        </div>
+      </div>
+      <a href="https://www.xiaohongshu.com/user/profile/6462018b000000001203698a" target="_blank" rel="noopener" class="creator-xhs-link">
+        <svg viewBox="0 0 24 24" fill="#ff2442"><circle cx="12" cy="12" r="10"/></svg>
+        샤오홍슈에서 보기
+      </a>
+    </div>
+
+    
+
+  </div>
+
+
+    <div class="reveal" style="margin-top:32px;padding:28px 32px;border:1px dashed var(--border);border-radius:16px;display:flex;align-items:center;justify-content:center;gap:20px;text-align:center;flex-direction:column;">
       <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--subtle); border: 1px dashed rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center;">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
       </div>
       <div>
         <p style="font-size:14px;font-weight:500;color:rgba(255,255,255,0.5);margin-bottom:6px;">크리에이터 모집 중</p>
-        <p style="font-size:12px;color:var(--muted);line-height:1.6;">샤오홍슈에서 활동하는<br>한국 크리에이터를 모집합니다.</p>
+        <p style="font-size:12px;color:var(--muted);line-height:1.6;">샤오홍슈에서 활동하는 한국 크리에이터를 모집합니다.</p>
       </div>
       <a href="#contact" style="font-size:12px;color:var(--blue-light);text-decoration:none;border:1px solid rgba(20,123,209,0.3);border-radius:8px;padding:7px 16px;transition:background 0.2s;" onmouseover="this.style.background='var(--blue-dim)'" onmouseout="this.style.background='transparent'">지원하기</a>
     </div>
 
-  </div>
-</section>
+  </section>
 
 <div class="full-divider"></div>
 
