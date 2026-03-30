@@ -2055,11 +2055,11 @@
 
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="hero-stat-num">5<span>+</span></div>
+        <div class="hero-stat-num"><span class="count-up" data-target="5" data-suffix="+">0</span><span>+</span></div>
         <div class="hero-stat-label">파트너 크리에이터</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">130<span>K+</span></div>
+        <div class="hero-stat-num"><span class="count-up" data-target="130" data-suffix="K+">0</span><span>K+</span></div>
         <div class="hero-stat-label">총 팔로워</div>
       </div>
       <div class="hero-stat">
@@ -2192,17 +2192,17 @@
 
   <div class="xhs-stats-grid reveal">
     <div class="xhs-stat-card">
-      <div class="xhs-stat-num">3<span>억+</span></div>
+      <div class="xhs-stat-num"><span class="count-up" data-target="3">0</span><span>억+</span></div>
       <div class="xhs-stat-label">월간 활성 사용자</div>
       <div class="xhs-stat-sub">중국 MZ세대가 매일 쓰는 앱</div>
     </div>
     <div class="xhs-stat-card">
-      <div class="xhs-stat-num">70<span>%</span></div>
+      <div class="xhs-stat-num"><span class="count-up" data-target="70">0</span><span>%</span></div>
       <div class="xhs-stat-label">구매 전 검색 비율</div>
       <div class="xhs-stat-sub">"네이버 블로그 + 인스타"의 중국 버전</div>
     </div>
     <div class="xhs-stat-card">
-      <div class="xhs-stat-num">3<span>배</span></div>
+      <div class="xhs-stat-num"><span class="count-up" data-target="3">0</span><span>배</span></div>
       <div class="xhs-stat-label">인스타 대비 전환율</div>
       <div class="xhs-stat-sub">검색 기반이라 구매 의도가 확실히 높은 플랫폼</div>
     </div>
@@ -3042,6 +3042,49 @@
   // Init the three logo canvases
   processLogoCanvas('nav-logo-canvas', 'nav-logo-img');
   processLogoCanvas('footer-logo-canvas', 'footer-logo-img');
+
+  // Count-up animation for stat numbers
+  (function() {
+    var countEls = document.querySelectorAll('.count-up');
+    if (!countEls.length) return;
+
+    var countObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        if (el.dataset.counted) return;
+        el.dataset.counted = 'true';
+
+        var target = parseInt(el.dataset.target, 10);
+        var duration = target <= 10 ? 1200 : 1800;
+        var startTime = null;
+
+        function easeOutExpo(t) {
+          return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+        }
+
+        function animate(timestamp) {
+          if (!startTime) startTime = timestamp;
+          var progress = Math.min((timestamp - startTime) / duration, 1);
+          var easedProgress = easeOutExpo(progress);
+          var current = Math.round(easedProgress * target);
+          el.textContent = current;
+          if (progress < 1) {
+            requestAnimationFrame(animate);
+          } else {
+            el.textContent = target;
+          }
+        }
+        requestAnimationFrame(animate);
+        countObserver.unobserve(el);
+      });
+    }, { threshold: 0.3 });
+
+    countEls.forEach(function(el) {
+      el.textContent = '0';
+      countObserver.observe(el);
+    });
+  })();
 
   // Clone nav logo into about illustration hub
   (function() {
