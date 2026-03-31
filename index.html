@@ -58,6 +58,8 @@
     color: var(--white);
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    word-break: keep-all;
+    overflow-wrap: break-word;
   }
 
   /* ── NAV ── */
@@ -1472,6 +1474,15 @@
   }
   .creator-xhs-link:hover { background: rgba(255,36,66,0.08); border-color: rgba(255,36,66,0.5); }
   .creator-xhs-link svg { width: 14px; height: 14px; }
+  .creator-inquiry-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-top: 8px; padding: 8px 16px;
+    font-size: 12px; font-weight: 500; color: var(--blue-light);
+    border: 1px solid rgba(20,123,209,0.25); border-radius: 8px;
+    text-decoration: none; transition: background 0.2s, border-color 0.2s;
+  }
+  .creator-inquiry-link:hover { background: rgba(20,123,209,0.08); border-color: rgba(20,123,209,0.5); }
+  .creator-inquiry-link svg { width: 14px; height: 14px; }
   .creator-card {
     background: var(--dark3);
     border: 1px solid var(--border);
@@ -2342,15 +2353,15 @@
         </div>
         <div class="case-stats">
           <div class="case-stat">
-            <div class="case-stat-val"><span>55</span>%</div>
+            <div class="case-stat-val"><span class="count-up" data-target="55">0</span>%</div>
             <div class="case-stat-key">외국인 고객 비율</div>
           </div>
           <div class="case-stat">
-            <div class="case-stat-val"><span>50</span>万+</div>
+            <div class="case-stat-val"><span class="count-up" data-target="50">0</span>万+</div>
             <div class="case-stat-key">샤오홍슈 노출</div>
           </div>
           <div class="case-stat">
-            <div class="case-stat-val">TOP <span>10</span>%</div>
+            <div class="case-stat-val">TOP <span class="count-up" data-target="10">0</span>%</div>
             <div class="case-stat-key">샤오홍슈 SEO</div>
           </div>
         </div>
@@ -2399,19 +2410,19 @@
       <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:24px;max-width:600px;">성수 소재 별자리 테마 바를 직접 운영하며 샤오홍슈 마케팅 노하우를 축적. 중국·일본 관광객 유입을 통해 외국인 비율을 지속적으로 끌어올리고 있습니다.</p>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;border-top:1px solid var(--border);padding-top:20px;">
         <div style="text-align:center;">
-          <div style="font-size:24px;font-weight:500;color:var(--blue-light);letter-spacing:-0.02em;">55%</div>
+          <div style="font-size:24px;font-weight:500;color:var(--blue-light);letter-spacing:-0.02em;"><span class="count-up" data-target="55">0</span>%</div>
           <div style="font-size:11px;color:var(--muted);margin-top:4px;">외국인 고객 비율</div>
         </div>
         <div style="text-align:center;">
-          <div style="font-size:24px;font-weight:500;color:var(--blue-light);letter-spacing:-0.02em;">50万+</div>
+          <div style="font-size:24px;font-weight:500;color:var(--blue-light);letter-spacing:-0.02em;"><span class="count-up" data-target="50">0</span>万+</div>
           <div style="font-size:11px;color:var(--muted);margin-top:4px;">샤오홍슈 총 노출</div>
         </div>
         <div style="text-align:center;">
-          <div style="font-size:24px;font-weight:500;color:var(--white);letter-spacing:-0.02em;">TOP 10%</div>
+          <div style="font-size:24px;font-weight:500;color:var(--white);letter-spacing:-0.02em;">TOP <span class="count-up" data-target="10">0</span>%</div>
           <div style="font-size:11px;color:var(--muted);margin-top:4px;">샤오홍슈 SEO</div>
         </div>
         <div style="text-align:center;">
-          <div style="font-size:24px;font-weight:500;color:var(--white);letter-spacing:-0.02em;">8개월+</div>
+          <div style="font-size:24px;font-weight:500;color:var(--white);letter-spacing:-0.02em;"><span class="count-up" data-target="8">0</span>개월+</div>
           <div style="font-size:11px;color:var(--muted);margin-top:4px;">지속 운영 중</div>
         </div>
       </div>
@@ -2427,15 +2438,15 @@
         <div class="partner-metrics">
           <div class="partner-metric">
             <span class="partner-metric-key">콘텐츠</span>
-            <span class="partner-metric-val">53건 (2개월)</span>
+            <span class="partner-metric-val"><span class="count-up" data-target="53">0</span>건 (2개월)</span>
           </div>
           <div class="partner-metric">
             <span class="partner-metric-key">월 평균 노출</span>
-            <span class="partner-metric-val highlight">13,000회</span>
+            <span class="partner-metric-val highlight"><span class="count-up" data-target="13000" data-separator="true">0</span>회</span>
           </div>
           <div class="partner-metric">
             <span class="partner-metric-key">체험단</span>
-            <span class="partner-metric-val">34팀</span>
+            <span class="partner-metric-val"><span class="count-up" data-target="34">0</span>팀</span>
           </div>
           <div class="partner-metric">
             <span class="partner-metric-key">맛집 검색 순위</span>
@@ -2452,11 +2463,11 @@
         <div class="partner-metrics">
           <div class="partner-metric">
             <span class="partner-metric-key">콘텐츠</span>
-            <span class="partner-metric-val">39건 (6개월)</span>
+            <span class="partner-metric-val"><span class="count-up" data-target="39">0</span>건 (6개월)</span>
           </div>
           <div class="partner-metric">
             <span class="partner-metric-key">인플루언서 좋아요</span>
-            <span class="partner-metric-val highlight">1,082개</span>
+            <span class="partner-metric-val highlight"><span class="count-up" data-target="1082" data-separator="true">0</span>개</span>
           </div>
           <div class="partner-metric">
             <span class="partner-metric-key">브랜드명 검색</span>
@@ -2477,15 +2488,15 @@
         <div class="partner-metrics">
           <div class="partner-metric">
             <span class="partner-metric-key">체험단</span>
-            <span class="partner-metric-val">13명</span>
+            <span class="partner-metric-val"><span class="count-up" data-target="13">0</span>명</span>
           </div>
           <div class="partner-metric">
             <span class="partner-metric-key">총 좋아요+저장</span>
-            <span class="partner-metric-val highlight">1,236회</span>
+            <span class="partner-metric-val highlight"><span class="count-up" data-target="1236" data-separator="true">0</span>회</span>
           </div>
           <div class="partner-metric">
             <span class="partner-metric-key">게시물당 반응</span>
-            <span class="partner-metric-val highlight">103회 (평균 80)</span>
+            <span class="partner-metric-val highlight"><span class="count-up" data-target="103">0</span>회 (평균 80)</span>
           </div>
           <div class="partner-metric">
             <span class="partner-metric-key">참여도</span>
@@ -2532,12 +2543,15 @@
           <div class="creator-metric-key">좋아요·저장</div>
         </div>
         <div class="creator-metric">
-          <div class="creator-metric-val">GRWM·하울</div>
-          <div class="creator-metric-key">대표 콘텐츠</div>
+          <div class="creator-metric-val">15万+</div>
+          <div class="creator-metric-key">월 평균 조회수</div>
         </div>
       </div>
-      <!-- TODO: Replace with actual XHS profile URL -->
-      <a href="https://www.xiaohongshu.com/search_result?keyword=%EB%8B%AC%EC%94%A8Darcie&type=user" target="_blank" rel="noopener" class="creator-xhs-link">
+      <a href="mailto:darcie@markwonders.io?subject=%EB%8B%AC%EC%94%A8%20%EA%B4%91%EA%B3%A0%20%ED%98%91%EC%97%85%20%EB%AC%B8%EC%9D%98" class="creator-inquiry-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        광고 문의하기
+      </a>
+      <a href="https://xhslink.com/m/2qtW27QcYKe" target="_blank" rel="noopener" class="creator-xhs-link">
         <svg viewBox="0 0 24 24" fill="#ff2442"><circle cx="12" cy="12" r="10"/></svg>
         샤오홍슈에서 보기
       </a>
@@ -2562,16 +2576,19 @@
           <div class="creator-metric-key">좋아요·저장</div>
         </div>
         <div class="creator-metric">
-          <div class="creator-metric-val">브이로그</div>
-          <div class="creator-metric-key">대표 콘텐츠</div>
+          <div class="creator-metric-val">40万+</div>
+          <div class="creator-metric-key">월 평균 조회수</div>
         </div>
         <div class="creator-metric">
-          <div class="creator-metric-val">맛집·카페</div>
-          <div class="creator-metric-key">서브 콘텐츠</div>
+          <div class="creator-metric-val">5.8%</div>
+          <div class="creator-metric-key">참여율</div>
         </div>
       </div>
-      <!-- TODO: Replace with actual XHS profile URL -->
-      <a href="https://www.xiaohongshu.com/search_result?keyword=%EC%A7%80%EC%9A%B0%E8%8A%9D%E9%9B%A8&type=user" target="_blank" rel="noopener" class="creator-xhs-link">
+      <a href="mailto:hello@markwonders.io?subject=%EC%A7%80%EC%9A%B0%20%EA%B4%91%EA%B3%A0%20%ED%98%91%EC%97%85%20%EB%AC%B8%EC%9D%98" class="creator-inquiry-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        광고 문의하기
+      </a>
+      <a href="https://xhslink.com/m/98vZR1drwpy" target="_blank" rel="noopener" class="creator-xhs-link">
         <svg viewBox="0 0 24 24" fill="#ff2442"><circle cx="12" cy="12" r="10"/></svg>
         샤오홍슈에서 보기
       </a>
@@ -2597,16 +2614,19 @@
           <div class="creator-metric-key">좋아요·저장</div>
         </div>
         <div class="creator-metric">
-          <div class="creator-metric-val">운동·식단</div>
-          <div class="creator-metric-key">대표 콘텐츠</div>
+          <div class="creator-metric-val">25万+</div>
+          <div class="creator-metric-key">월 평균 조회수</div>
         </div>
         <div class="creator-metric">
-          <div class="creator-metric-val">스킨케어</div>
-          <div class="creator-metric-key">서브 콘텐츠</div>
+          <div class="creator-metric-val">7.2%</div>
+          <div class="creator-metric-key">참여율</div>
         </div>
       </div>
-      <!-- TODO: Replace with actual XHS profile URL -->
-      <a href="https://www.xiaohongshu.com/search_result?keyword=J_yunn&type=user" target="_blank" rel="noopener" class="creator-xhs-link">
+      <a href="mailto:hello@markwonders.io?subject=J_yunn%20%EA%B4%91%EA%B3%A0%20%ED%98%91%EC%97%85%20%EB%AC%B8%EC%9D%98" class="creator-inquiry-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        광고 문의하기
+      </a>
+      <a href="https://xhslink.com/m/6umwHI1UVYl" target="_blank" rel="noopener" class="creator-xhs-link">
         <svg viewBox="0 0 24 24" fill="#ff2442"><circle cx="12" cy="12" r="10"/></svg>
         샤오홍슈에서 보기
       </a>
@@ -2631,16 +2651,19 @@
           <div class="creator-metric-key">좋아요·저장</div>
         </div>
         <div class="creator-metric">
-          <div class="creator-metric-val">메이크업</div>
-          <div class="creator-metric-key">대표 콘텐츠</div>
+          <div class="creator-metric-val">8万+</div>
+          <div class="creator-metric-key">월 평균 조회수</div>
         </div>
         <div class="creator-metric">
-          <div class="creator-metric-val">뷰티 리뷰</div>
-          <div class="creator-metric-key">서브 콘텐츠</div>
+          <div class="creator-metric-val">9.1%</div>
+          <div class="creator-metric-key">참여율</div>
         </div>
       </div>
-      <!-- TODO: Replace with actual XHS profile URL -->
-      <a href="https://www.xiaohongshu.com/search_result?keyword=%ED%9A%A8%EC%A3%BC%E6%95%88%E5%A7%9D&type=user" target="_blank" rel="noopener" class="creator-xhs-link">
+      <a href="mailto:hyoju@markwonders.io?subject=%ED%9A%A8%EC%A3%BC%20%EA%B4%91%EA%B3%A0%20%ED%98%91%EC%97%85%20%EB%AC%B8%EC%9D%98" class="creator-inquiry-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        광고 문의하기
+      </a>
+      <a href="https://xhslink.com/m/1IoK7QoDvsa" target="_blank" rel="noopener" class="creator-xhs-link">
         <svg viewBox="0 0 24 24" fill="#ff2442"><circle cx="12" cy="12" r="10"/></svg>
         샤오홍슈에서 보기
       </a>
@@ -2665,16 +2688,19 @@
           <div class="creator-metric-key">좋아요·저장</div>
         </div>
         <div class="creator-metric">
-          <div class="creator-metric-val">다이어트 일기</div>
-          <div class="creator-metric-key">대표 콘텐츠</div>
+          <div class="creator-metric-val">3万+</div>
+          <div class="creator-metric-key">월 평균 조회수</div>
         </div>
         <div class="creator-metric">
-          <div class="creator-metric-val">일상 브이로그</div>
-          <div class="creator-metric-key">서브 콘텐츠</div>
+          <div class="creator-metric-val">6.5%</div>
+          <div class="creator-metric-key">참여율</div>
         </div>
       </div>
-      <!-- TODO: Replace with actual XHS profile URL -->
-      <a href="https://www.xiaohongshu.com/search_result?keyword=%EB%B9%84%EB%8B%88b.niee&type=user" target="_blank" rel="noopener" class="creator-xhs-link">
+      <a href="mailto:b.niee@markwonders.io?subject=%EB%B9%84%EB%8B%88%20%EA%B4%91%EA%B3%A0%20%ED%98%91%EC%97%85%20%EB%AC%B8%EC%9D%98" class="creator-inquiry-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        광고 문의하기
+      </a>
+      <a href="https://xhslink.com/m/4yeTFBptjc9" target="_blank" rel="noopener" class="creator-xhs-link">
         <svg viewBox="0 0 24 24" fill="#ff2442"><circle cx="12" cy="12" r="10"/></svg>
         샤오홍슈에서 보기
       </a>
@@ -2693,23 +2719,27 @@
       <div class="creator-divider"></div>
       <div class="creator-metrics">
         <div class="creator-metric">
+          <div class="creator-metric-val">1.2K</div>
+          <div class="creator-metric-key">샤오홍슈 팔로워</div>
+        </div>
+        <div class="creator-metric">
+          <div class="creator-metric-val">2万+</div>
+          <div class="creator-metric-key">월 평균 조회수</div>
+        </div>
+        <div class="creator-metric">
+          <div class="creator-metric-val">8.4%</div>
+          <div class="creator-metric-key">참여율</div>
+        </div>
+        <div class="creator-metric">
           <div class="creator-metric-val">20대 여성</div>
-          <div class="creator-metric-key">타겟 페르소나</div>
-        </div>
-        <div class="creator-metric">
-          <div class="creator-metric-val">리얼 일상</div>
-          <div class="creator-metric-key">콘텐츠 톤</div>
-        </div>
-        <div class="creator-metric">
-          <div class="creator-metric-val">캠퍼스 라이프</div>
-          <div class="creator-metric-key">서브 콘텐츠</div>
-        </div>
-        <div class="creator-metric">
-          <div class="creator-metric-val">NEW</div>
-          <div class="creator-metric-key">2025 합류</div>
+          <div class="creator-metric-key">주요 오디언스</div>
         </div>
       </div>
-      <a href="https://www.xiaohongshu.com/user/profile/6462018b000000001203698a" target="_blank" rel="noopener" class="creator-xhs-link">
+      <a href="mailto:ch_nns@markwonders.io?subject=%EC%86%90%EC%B1%84%ED%98%84%20%EA%B4%91%EA%B3%A0%20%ED%98%91%EC%97%85%20%EB%AC%B8%EC%9D%98" class="creator-inquiry-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        광고 문의하기
+      </a>
+      <a href="https://xhslink.com/m/9X4Hq2zTKDQ" target="_blank" rel="noopener" class="creator-xhs-link">
         <svg viewBox="0 0 24 24" fill="#ff2442"><circle cx="12" cy="12" r="10"/></svg>
         샤오홍슈에서 보기
       </a>
@@ -2842,19 +2872,10 @@
           </div>
           <div>
             <div class="contact-item-label">인스타그램</div>
-            <a href="https://instagram.com/markwonders" target="_blank" rel="noopener" class="contact-item-val" style="text-decoration:none;color:var(--white);transition:color 0.2s;" onmouseover="this.style.color='var(--blue-light)'" onmouseout="this.style.color='var(--white)'">@markwonders</a>
+            <a href="https://instagram.com/markwonders.io" target="_blank" rel="noopener" class="contact-item-val" style="text-decoration:none;color:var(--white);transition:color 0.2s;" onmouseover="this.style.color='var(--blue-light)'" onmouseout="this.style.color='var(--white)'">@markwonders.io</a>
           </div>
         </div>
 
-        <div class="contact-item">
-          <div class="contact-item-icon">
-            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <div>
-            <div class="contact-item-label">위치</div>
-            <div class="contact-item-val">서울, 대한민국</div>
-          </div>
-        </div>
       </div>
     </div>
 
@@ -3063,16 +3084,23 @@
           return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
         }
 
+        var useSeparator = el.dataset.separator === 'true';
+
+        function formatNum(n) {
+          if (!useSeparator) return n.toString();
+          return n.toLocaleString('en-US');
+        }
+
         function animate(timestamp) {
           if (!startTime) startTime = timestamp;
           var progress = Math.min((timestamp - startTime) / duration, 1);
           var easedProgress = easeOutExpo(progress);
           var current = Math.round(easedProgress * target);
-          el.textContent = current;
+          el.textContent = formatNum(current);
           if (progress < 1) {
             requestAnimationFrame(animate);
           } else {
-            el.textContent = target;
+            el.textContent = formatNum(target);
           }
         }
         requestAnimationFrame(animate);
